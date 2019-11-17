@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Half-Life Commands</title>
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/tables.css" />
+</head>
+<body>
+
+    <h2>Half-Life CMD List</h2>
+    <h5>If you cant find comamnd in table, feel free to contribute by adding it to the list.</h5>
+    <p>Type something in the input field to search the table:</p>  
+    <input id="searchForCmds" type="text" placeholder="Search.."> <a id="resetBtn" href="#">reset</a>
+    <br><br>
+
+    
+    <table class="condesed bordered" id="tableCon">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>cvar</th>
+                <th>default</th>
+                <th>min.</th>
+                <th>max.</th>
+                <th>type</th>
+                <th>category</th>
+                <th>information</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+      
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        function listData(){
+            $(function(){
+                // load json data object from file 
+                $.getJSON('data.json',function(data){
+                    // parse every field with .each() function
+                    $(data).each(function(index){
+                        // inject table rows into our table
+                        $('#tableCon > tbody:last-child').append('<tr><td>'+ (index + 1) +'</td><td>' + this.cvar + '</td><td>' + this.default+ '</td><td>' + this.value.min + '</td><td>' + this.value.max + '</td><td>' + this.type + '</td><td>' + this.category + '</td><td>' + this.description+ '</td></tr>');
+                    });
+                });
+            });
+        }
+
+        // wait for jquery to load
+        $(document).ready(function () {
+
+            // list all data from json file
+            listData();
+            
+            // search for cvars in table
+            $("#searchForCmds").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#tableCon tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            //reset input serach field
+            $('#resetBtn').click(function(){
+                // put value to empty				      
+                $('#searchForCmds').val('');
+                // call list again
+                listData();
+            });
+        });
+    </script>
+</body>
+</html>
