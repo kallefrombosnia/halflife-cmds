@@ -3652,6 +3652,21 @@
     {
         "broken": false,
         "category": "server",
+        "cvar": "mp_infinite_ammo",
+        "default": "0",
+        "description": "Server cvar to se infinite ammo, set 0 to disable, 1 for infinite ammo in guns and 2 for infinite reload ammo",
+        "game": "cs",
+        "sp": false,
+        "type": "integer",
+        "value": {
+            "default": "0",
+            "max": "2",
+            "min": "0"
+        }
+    },
+    {
+        "broken": false,
+        "category": "server",
         "cvar": "mp_kickpercent",
         "default": "0.66",
         "description": "Sets the percentage of teammates it takes to vote off a player.",
@@ -3826,6 +3841,36 @@
         "value": {
             "default": "16000",
             "max": "16000",
+            "min": "0"
+        }
+    }, 
+    {
+        "broken": false,
+        "category": "server",
+        "cvar": "mp_scoreboard_showhealth",
+        "default": "3",
+        "description": "Server cvar to control health values rendered for clients. . 0 - Disable showing health altogether, 1 - Show Terrorist health to all teams, 2 - Show CT health to all teams, 3 - (default) Show CT health to teammates only and Terrorist health to teammates only, 4 - Show health for all players to all other players, 5 - Show CT and T health to teammates and to spectators",
+        "game": "cs",
+        "sp": false,
+        "type": "integer",
+        "value": {
+            "default": "3",
+            "max": "5",
+            "min": "0"
+        }
+    },
+    {
+        "broken": false,
+        "category": "server",
+        "cvar": "mp_scoreboard_showmoney",
+        "default": "3",
+        "description": "Server cvar to control money values rendered for clients. . 0 - Disable showing money altogether, 1 - Show Terrorist money to all teams, 2 - Show CT money to all teams, 3 - (default) Show CT money to teammates only and Terrorist health to teammates only, 4 - Show money for all players to all other players, 5 - Show CT and T money to teammates and to spectators",
+        "game": "cs",
+        "sp": false,
+        "type": "integer",
+        "value": {
+            "default": "3",
+            "max": "5",
             "min": "0"
         }
     },
@@ -5227,6 +5272,66 @@
             "default": "server.cfg",
             "max": "",
             "min": ""
+        }
+    },
+    {
+        "broken": false,
+        "category": "video",
+        "cvar": "scoreboard_shortheaders",
+        "default": "0",
+        "description": "Scoreboard cvar to show shortened, simple headers for columns",
+        "game": "cs",
+        "sp": false,
+        "type": "integer",
+        "value": {
+            "default": "0",
+            "max": "1",
+            "min": "0"
+        }
+    },
+    {
+        "broken": false,
+        "category": "video",
+        "cvar": "scoreboard_showavatars",
+        "default": "0",
+        "description": "scoreboard cvar to enable/disable showing avatars in scoreboard",
+        "game": "cs",
+        "sp": false,
+        "type": "integer",
+        "value": {
+            "default": "0",
+            "max": "1",
+            "min": "0"
+        }
+    },
+    {
+        "broken": false,
+        "category": "video",
+        "cvar": "scoreboard_showhealth",
+        "default": "0",
+        "description": "scoreboard cvar to enable/disable showing health column in scoreboard",
+        "game": "cs",
+        "sp": false,
+        "type": "integer",
+        "value": {
+            "default": "0",
+            "max": "1",
+            "min": "0"
+        }
+    },
+    {
+        "broken": false,
+        "category": "video",
+        "cvar": "scoreboard_showmoney",
+        "default": "0",
+        "description": "scoreboard cvar to enable/disable showing money column in scoreboard",
+        "game": "cs",
+        "sp": false,
+        "type": "integer",
+        "value": {
+            "default": "0",
+            "max": "1",
+            "min": "0"
         }
     },
     {
